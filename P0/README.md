@@ -1,0 +1,3 @@
+# PRACTICA 0
+
+Probando el VSCode...
