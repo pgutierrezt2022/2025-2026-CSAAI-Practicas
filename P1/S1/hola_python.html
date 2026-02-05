@@ -20,23 +20,12 @@
     <h2>Resultado de mi programa Python</h2>
 
     <!-- Aquí aparece lo que imprima tu código Python -->
-    <div id="salida"></div>
+    <div id="salida" style="background: #f8f8f8; padding: 15px; border: 1px solid #ccc; min-height: 100px; font-family: monospace;"></div>
 
-    <!-- Este es el código Python que se ejecuta automáticamente -->
-<py-script output="salida">
-print("Programa para sumar dos números")
-print("--------------------------------")
-
-try:
-    num1 = float(input("Primer número: "))
-    num2 = float(input("Segundo número: "))
-    
-    suma = num1 + num2
-    
-    print(f"\n{num1} + {num2} = {suma}")
-    print("¡Operación realizada!")
-except:
-    print("Error: por favor escribe números válidos")
+    <py-script output="salida">
+print("Línea 1 - Esto debería aparecer")
+print("Línea 2 - Si ves esto, PyScript funciona")
+print("Línea 3 - Todo bien hasta aquí")
     </py-script>
 
 </body>
