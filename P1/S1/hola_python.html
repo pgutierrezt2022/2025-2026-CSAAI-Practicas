@@ -23,13 +23,20 @@
     <div id="salida"></div>
 
     <!-- Este es el código Python que se ejecuta automáticamente -->
-    <py-script output="salida">
-print("¡Hola desde Python!")
-print("Estoy dentro de tu página web")
-print("Hoy es un gran día para aprender")
+<py-script output="salida">
+print("Programa para sumar dos números")
+print("--------------------------------")
 
-nombre = "Pablo"
-print(f"Bienvenido, Pablo!")
+try:
+    num1 = float(input("Primer número: "))
+    num2 = float(input("Segundo número: "))
+    
+    suma = num1 + num2
+    
+    print(f"\n{num1} + {num2} = {suma}")
+    print("¡Operación realizada!")
+except:
+    print("Error: por favor escribe números válidos")
     </py-script>
 
 </body>
