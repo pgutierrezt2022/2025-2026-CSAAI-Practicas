@@ -2,32 +2,22 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Prueba PyScript</title>
+  <title>Prueba mínima PyScript</title>
+  
   <link rel="stylesheet" href="https://pyscript.net/releases/2024.8.1/core.css">
   <script type="module" src="https://pyscript.net/releases/2024.8.1/core.js"></script>
 </head>
-<body style="padding: 30px; font-family: Arial;">
+<body>
 
-  <h1>Prueba simple</h1>
+  <h1>Prueba mínima</h1>
+  
+  <pre id="output"></pre>
 
-  <div id="salida" style="
-    background: #f0f8ff;
-    border: 2px solid #4682b4;
-    padding: 20px;
-    min-height: 120px;
-    font-family: monospace;
-    white-space: pre-wrap;
-  "></div>
-
-  <py-script output="salida">
-print("¡Esto es una prueba!")
-print("Si ves este texto → PyScript está funcionando")
+  <py-script output="output">
+print("¡Éxito!")
+print("Si lees esto, PyScript está funcionando")
 print("Línea 3")
-print("Línea 4")
-print("Todo bien hasta aquí ✓")
   </py-script>
 
 </body>
 </html>
-
-
