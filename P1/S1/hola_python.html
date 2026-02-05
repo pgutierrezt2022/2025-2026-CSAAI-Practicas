@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hola Mundo 2 con Python</title>
-
-    <!-- Esto carga PyScript (necesario para ejecutar Python en el navegador) -->
-    <link rel="stylesheet" href="https://pyscript.net/releases/2024.8.1/core.css">
-    <script type="module" src="https://pyscript.net/releases/2024.8.1/core.js"></script>
+  <meta charset="UTF-8">
+  <title>Prueba PyScript</title>
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.8.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.8.1/core.js"></script>
 </head>
-<body>
+<body style="padding: 30px; font-family: Arial;">
 
-    <h1>Capítulo 2</h1>
-    <p>Este es mi Hola mundo 2!!!!!</p>
+  <h1>Prueba simple</h1>
 
-    <hr>
+  <div id="salida" style="
+    background: #f0f8ff;
+    border: 2px solid #4682b4;
+    padding: 20px;
+    min-height: 120px;
+    font-family: monospace;
+    white-space: pre-wrap;
+  "></div>
 
-    <h2>Resultado de mi programa Python</h2>
-
-    <!-- Aquí aparece lo que imprima tu código Python -->
-    <div id="salida" style="background: #f8f8f8; padding: 15px; border: 1px solid #ccc; min-height: 100px; font-family: monospace;"></div>
-
-    <py-script output="salida">
-print("Línea 1 - Esto debería aparecer")
-print("Línea 2 - Si ves esto, PyScript funciona")
-print("Línea 3 - Todo bien hasta aquí")
-    </py-script>
+  <py-script output="salida">
+print("¡Esto es una prueba!")
+print("Si ves este texto → PyScript está funcionando")
+print("Línea 3")
+print("Línea 4")
+print("Todo bien hasta aquí ✓")
+  </py-script>
 
 </body>
 </html>
+
+
