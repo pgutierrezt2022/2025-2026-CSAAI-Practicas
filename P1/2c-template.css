@@ -1,65 +1,229 @@
-/* https://www.w3schools.com/howto/howto_css_two_columns.asp */
-/* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
-/* Así definimos el comportamiento de caja para todos los elementos */
+/* Caja global */
 * {
     box-sizing: border-box;
-  }
-  
-/* Crear columnas de ancho diferente que se colocan una a continuación de la otra */
+}
+
+/* ====== BODY ====== */
+
+body {
+    background-image: url('fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(75%); /* Esto oscurece un poco el fondo */
+    font-family: Verdana, sans-serif;
+}
+
+/* ====== COLUMNAS ====== */
+
 .columna {
-float: left;
-padding: 10px;
-min-height: 500px;
+    float: left;
+    padding: 20px;
+    min-height: 500px;
 }
 
 .izquierda {
-width: 25%;
+    width: 25%;
 }
 
 .derecha {
-width: 75%;
+    width: 75%;
 }
 
-/* Clear floats despues de las columnas para eliminar la superposición */
-.filla:after {
-content: "";
-display: table;
-clear: both;
+/* Clear floats */
+.fila:after {
+    content: "";
+    display: table;
+    clear: both;
 }
+
+/* ====== COLORES ====== */
 
 #c1 {
-    background-color:#aaa;
+    background-color: #ff7f00;
 }
 
 #c2 {
-    background-color:#bbb;
+    background-color: #ffffff;
 }
 
-/* estilos para imágenes https://www.w3schools.com/css/css3_images.asp */
-/* posicionamiento de imágenes https://www.w3schools.com/css/css_positioning.asp */
+/* ====== HEADER ====== */
 
-img {
-    width: 100%;
-    height: auto;
+header {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
 }
+
+/* ====== MENÚ ====== */
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #ff7f00;
+}
+
+.menu a.active {
+    color: #ff7f00;
+    text-decoration: underline;
+}
+
+/* ====== IMAGEN PERFIL ====== */
 
 .iresponsive {
-    padding: 0 6px;
-    float: left;
-    width: 50%;
-  }
+    width: 100%;
+    margin-bottom: 15px;
+}
 
-/* Responsive layout - cuando el ancho de pantalla es menor a 600px, muestra las columnas apiladas. */
-/* Así conseguimos que el contenido se vea bien en dispositvos móviles */
+#c1 img {
+    width: 70%;
+    max-width: 220px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+}
+
+/* ====== TEXTOS ====== */
+
+h2, h3 {
+    margin-top: 20px;
+}
+
+p {
+    line-height: 1.5;
+}
+
+/* ====== CARDS (projects) ====== */
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+
+/* ====== BOTONES ====== */
+
+.boton {
+    display: block;
+    margin: 20px auto;
+    padding: 12px;
+    width: 80%;
+    text-align: center;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+/* ====== EXPERIENCIA ====== */
+
+/* CONTENEDOR DE EXPERIENCIAS EN 3 COLUMNAS */
+.experiencias-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* CADA TARJETA */
+.experiencia {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    flex: 1;              /* que todas crezcan igual */
+    min-width: 250px;     /* tamaño mínimo */
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+
+    border: 2px solid #ff7f00;
+
+    box-shadow:
+        0 0 5px #ff7f00,
+        0 0 10px #ff7f00,
+        0 0 20px #ff4500,
+        0 0 40px rgba(255, 69, 0, 0.6);
+}
+
+/* IMAGEN */
+.experiencia img {
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
+
+    border: 3px solid #ff7f00;
+    border-radius: 10px;
+}
+
+
+/* ====== VIDEO ====== */
+video {
+    display: block;
+    margin: 30px auto;   /* esto lo centra */
+    width: 70%;
+    max-width: 400px;
+
+    border: 2px solid #00f0ff;
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 5px #00f0ff,
+        0 0 10px #00f0ff,
+        0 0 20px #0088ff;
+}
+
+/* ====== TEXO NEON ====== */
+
+.neon1 {
+    color: #ff7f00;
+    text-shadow:
+        0 0 5px #ff7f00,
+        0 0 10px #ff7f00,
+        0 0 20px #ff7f00,
+        0 0 40px #ff4500;
+}
+
+.neon2 {
+    color: #24dd24;
+    text-shadow:
+        0 0 5px #181bb9,
+        0 0 10px #4a30df,
+        0 0 20px #252d9c,
+        0 0 40px #3faeca;
+}
+
+/* ====== RESPONSIVE ====== */
 
 @media screen and (max-width: 600px) {
     .columna {
-      width: 100%;
+        width: 100%;
     }
 
-    .iresponsive {
+    .experiencia {
         width: 100%;
     }
 }
-
-/* Más sobre diseño web responsive https://www.w3schools.com/css/css_rwd_intro.asp */

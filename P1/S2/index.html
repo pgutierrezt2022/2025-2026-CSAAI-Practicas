@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML: Estructurando los documentos</title>
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- ÍNDICE                    -->
+    <!-- ========================= -->
+
+    <h1>Índice de ejemplos</h1>
+
+    <ol>
+        <li><a href="#estructura">Estructura y DOM</a></li>
+        <li><a href="#encabezados">Encabezados</a></li>
+        <li><a href="#parrafos">Párrafos</a></li>
+        <li><a href="#listas">Listas</a></li>
+        <li><a href="#tablas">Tablas</a></li>
+        <li><a href="#botones">Botones</a></li>
+        <li><a href="#enlaces">Enlaces</a></li>
+        <li><a href="#imagenes">Imágenes</a></li>
+        <li><a href="#secciones">Secciones genéricas</a></li>
+        <li><a href="#grupos">Grupos (id y class)</a></li>
+        <li><a href="#html5">Novedades HTML5</a></li>
+    </ol>
+
+    <hr>
+
+    <!-- ========================= -->
+    <!-- 1. ESTRUCTURA Y DOM       -->
+    <!-- ========================= -->
+
+    <h2 id="estructura">1. Estructura y DOM</h2>
+
+    <p>
+        HTML nos permite estructurar la información en forma de árbol.
+        Esta representación jerárquica se conoce como DOM
+        (Modelo de Objeto del Documento).
+    </p>
+
+    <p>
+        Gracias al DOM podemos manipular el contenido, modificar atributos,
+        manejar eventos y crear elementos dinámicamente mediante JavaScript.
+    </p>
+
+    <!-- ========================= -->
+    <!-- 2. ENCABEZADOS            -->
+    <!-- ========================= -->
+
+    <h2 id="encabezados">2. Encabezados</h2>
+
+    <h1>Encabezado H1</h1>
+    <h2>Encabezado H2</h2>
+    <h3>Encabezado H3</h3>
+    <h4>Encabezado H4</h4>
+    <h5>Encabezado H5</h5>
+    <h6>Encabezado H6</h6>
+
+    <!-- ========================= -->
+    <!-- 3. PÁRRAFOS               -->
+    <!-- ========================= -->
+
+    <h2 id="parrafos">3. Párrafos</h2>
+
+    <p>
+        Este es un ejemplo de párrafo en HTML. Aunque el texto
+        esté en varias líneas en el código, el navegador lo
+        renderiza en una sola línea continua.
+    </p>
+
+    <p>
+        Este es otro párrafo separado del anterior.
+    </p>
+
+    <!-- ========================= -->
+    <!-- 4. LISTAS                 -->
+    <!-- ========================= -->
+
+    <h2 id="listas">4. Listas</h2>
+
+    <h3>Lista ordenada</h3>
+    <ol>
+        <li>Conectarse al servidor</li>
+        <li>Solicitar documento</li>
+        <li>Esperar respuesta</li>
+    </ol>
+
+    <h3>Lista no ordenada</h3>
+    <ul>
+        <li>Leche</li>
+        <li>Café</li>
+        <li>Pan</li>
+    </ul>
+
+    <h3>Lista de definición</h3>
+    <dl>
+        <dt>DOM</dt>
+        <dd>Modelo de Objeto del Documento</dd>
+        <dt>HTML</dt>
+        <dd>Lenguaje de marcado para estructurar páginas web</dd>
+    </dl>
+
+    <!-- ========================= -->
+    <!-- 5. TABLAS                 -->
+    <!-- ========================= -->
+
+    <h2 id="tablas">5. Tablas</h2>
+
+    <table border="1">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Descripción</th>
+        </tr>
+        <tr>
+            <td>Chuck</td>
+            <td>Norris</td>
+            <td>Creó a Dios</td>
+        </tr>
+        <tr>
+            <td>Ecce</td>
+            <td>Homo</td>
+            <td>Genialidad artística</td>
+        </tr>
+    </table>
+
+    <!-- ========================= -->
+    <!-- 6. BOTONES                -->
+    <!-- ========================= -->
+
+    <h2 id="botones">6. Botones</h2>
+
+    <button>Botón 1</button>
+    <button>Botón 2</button>
+
+    <!-- ========================= -->
+    <!-- 7. ENLACES                -->
+    <!-- ========================= -->
+
+    <h2 id="enlaces">7. Enlaces</h2>
+
+    <p>
+        <a href="https://github.com/">Ir a GitHub</a>
+    </p>
+
+    <!-- ========================= -->
+    <!-- 8. IMÁGENES               -->
+    <!-- ========================= -->
+
+    <h2 id="imagenes">8. Imágenes</h2>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"
+         alt="Logo HTML5"
+         width="150">
+
+    <p>Ejemplo de imagen usando una URL.</p>
+
+    <!-- ========================= -->
+    <!-- 9. SECCIONES GENÉRICAS    -->
+    <!-- ========================= -->
+
+    <h2 id="secciones">9. Secciones genéricas</h2>
+
+    <div>
+        Bloque 1
+        <div>
+            Bloque 1.1
+        </div>
+    </div>
+
+    <div>
+        Bloque 2
+        <span>(Inline 1)</span>
+        <span>(Inline 2)</span>
+    </div>
+
+    <!-- ========================= -->
+    <!-- 10. GRUPOS                -->
+    <!-- ========================= -->
+
+    <h2 id="grupos">10. Grupos (id y class)</h2>
+
+    <h3 class="grupo1" id="enc1">Encabezado agrupado</h3>
+
+    <div class="grupo1">
+        Sección con la misma clase
+    </div>
+
+    <div id="seccion2">
+        Sección con identificador único
+    </div>
+
+    <!-- ========================= -->
+    <!-- 11. HTML5                 -->
+    <!-- ========================= -->
+
+    <h2 id="html5">11. Novedades HTML5</h2>
+
+    <ul>
+        <li>Audio y Video</li>
+        <li>Canvas</li>
+        <li>WebGL</li>
+        <li>Geolocalización</li>
+        <li>Web Workers</li>
+        <li>LocalStorage y SessionStorage</li>
+    </ul>
+
+    <!-- Comentario de ejemplo -->
+    <!-- Este es un comentario que el navegador no muestra -->
+
+</body>
+</html>

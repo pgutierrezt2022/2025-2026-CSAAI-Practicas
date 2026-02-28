@@ -1,51 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Dos columnas</title>
-
-   <!-- Hoja de estilo -->
-   <link rel="stylesheet" href="2c-template.css">    
-
+    <title>CV - Kenny McCormick</title>
+    <link rel="stylesheet" href="2c-template.css">
 </head>
+
 <body>
-    
-    <h2>Diseño de plantilla a dos columnas</h2>
 
-    <div class="fila">
-      <div id="c1" class="columna izquierda">
-        <h2>Columna Izquierda</h2>
-
-        <div class="iresponsive">
-            <img id="imghtml" src="html5.png" alt="html5" width="200" height="200">
-        </div>
-
-        <div class="iresponsive">
-            <img id="imgcss" src="css.png" alt="css" width="200" height="200">
-        </div>
-
-        <p>Senserit mediocrem vis ex, et dicunt deleniti gubergren mei. Mel id clita mollis repudiare. 
-            Sed ad nostro delicatissimi, postea pertinax est an. Adhuc sensibus percipitur sed te, 
-            eirmod tritani debitis nec ea. Cu vis quis gubergren.
-        </p>
-        <ul>
-            <li>Contacto</li>
-            <li>Formación</li>
-            <li>Experiencia</li>
-            <li>Acerca de</li>
+<header>
+    <h1 class="neon1"><i>CV - Kenny McCormick</i></h1>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html" class="active">Inicio</a></li>
+            <li><a href="about.html">Acerca de</a></li>
+            <li><a href="projects.html">Proyectos</a></li>
         </ul>
-      </div>
-      <div id="c2" class="columna derecha">
-        <h2>Columna Derecha</h2>
-        <img src="web-tech.png" alt="Tecnologías web">
-        <p>Senserit mediocrem vis ex, et dicunt deleniti gubergren mei. Mel id clita mollis repudiare. 
-            Sed ad nostro delicatissimi, postea pertinax est an. Adhuc sensibus percipitur sed te, 
-            eirmod tritani debitis nec ea. Cu vis quis gubergren.
+    </nav>
+</header>
+
+<div class="fila">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div id="c1" class="columna izquierda">
+
+        <h2 class="neon2"><u>Perfil</u></h2>
+
+        <div class="iresponsive">
+            <img src="kenny1.jpeg" alt="Kenny clásico">
+        </div>
+
+        <p>
+            <i>Estudiante en South Park Elementary con habilidades especiales
+            en supervivencia extrema y regeneración espontánea.</i>
         </p>
-      </div>
+
+        <h3 class="neon2">Formación</h3>
+
+        <ul>
+            <li>Educación primaria en South Park</li>
+            <li>Entrenamiento en identidad secreta (Mysterion)</li>
+            <li>Experiencia en situaciones de riesgo extremo</li>
+        </ul>
+
+        <a href="https://www.youtube.com/watch?v=kDyfi0qP5is" target="_blank" class="boton">
+            CONTRATADO
+        </a>
+
     </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div id="c2" class="columna derecha">
+
+        <h2 class="neon2">Habilidades</h2>
+
+        <ul>
+            <li>Resistencia física avanzada</li>
+            <li>Capacidad de regeneración</li>
+            <li>Trabajo en equipo</li>
+            <li>Adaptación a entornos hostiles</li>
+        </ul>
+
+        <h2 class="neon2">Objetivo Profesional</h2>
+
+        <p>
+            <i>Participar en misiones especiales protegiendo South Park
+            mientras mantengo mi identidad secreta.</i>
+        </p>
+
+        <h2 class="neon2">Experiencia</h2>
+
+        <div class="experiencias-container">
+
+            <div class="experiencia">
+                <h3>Vigilante nocturno</h3>
+                <img src="exp1.jpeg" alt="Kenny trabajando como vigilante">
+                <p><i>Protección de la ciudad durante misiones nocturnas bajo identidad secreta.</i></p>
+            </div>
+
+            <div class="experiencia">
+                <h3>Científico experimental</h3>
+                <img src="exp2.jpeg" alt="Kenny en laboratorio">
+                <p><i>Participación en experimentos avanzados y situaciones de alto riesgo.</i></p>
+            </div>
+
+            <div class="experiencia">
+                <h3>Explorador interdimensional</h3>
+                <img src="exp3.jpeg" alt="Kenny explorando otra dimensión">
+                <p><i>Exploración de realidades alternativas y adaptación a entornos hostiles.</i></p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 </html>
