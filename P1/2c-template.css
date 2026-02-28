@@ -16,10 +16,10 @@ body {
 
 /* ====== IMAGEN INTERESES ====== */
 .intereses-img {
-    width: 220px;      /* tamaño fijo */
-    max-width: 100%;   /* evita que se rompa en móvil */
+    width: 220px;   
+    max-width: 100%;   
     display: block;
-    margin: 30px auto; /* la centra y la separa del texto */
+    margin: 30px auto;
     border-radius: 10px;
 }
 
