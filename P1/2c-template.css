@@ -14,6 +14,20 @@ body {
     font-family: Verdana, sans-serif;
 }
 
+/* ====== IMAGEN INTERESES ====== */
+.intereses-img {
+    width: 220px;      /* tamaño fijo */
+    max-width: 100%;   /* evita que se rompa en móvil */
+    display: block;
+    margin: 30px auto; /* la centra y la separa del texto */
+    border-radius: 10px;
+}
+
+.intereses-container {
+    text-align: center;   /* centra la imagen */
+    margin-top: 15px;
+}
+
 /* ====== COLUMNAS ====== */
 
 .columna {
