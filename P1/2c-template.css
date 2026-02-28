@@ -218,32 +218,6 @@ video {
 
 
 
-
-
-/* ====== 2 ====== */
-
-
-.intereses-container2 {
-    text-align: center;   /* centra la imagen */
-    margin-top: 15px;
-}
-
-.intereses-texto2 {
-    flex: 1; 
-}
-
-.intereses-img2 {
-    width: 50px;
-    margin-top: 20px;   
-    border-radius: 10px;
-    box-shadow: 0 0 15px cyan;
-}
-
-
-
-
-
-
 /* ====== RESPONSIVE ====== */
 
 @media screen and (max-width: 600px) {
