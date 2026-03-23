@@ -2,6 +2,7 @@ let password = [];
 let intentos = 7;
 let crono;
 let jugando = false;
+let terminado = false; 
 
 const display = document.getElementById("display");
 const intentosSpan = document.getElementById("intentos");
@@ -43,7 +44,7 @@ function crearTeclado() {
 }
 
 function jugar(numero, boton) {
-  if (!jugando) return;
+  if (!jugando || terminado) return; 
 
   // arrancar música
   if (musica.paused) {
@@ -78,6 +79,7 @@ function comprobarFin() {
   if (ganado) {
     crono.stop();
     jugando = false;
+    terminado = true; 
     musica.pause();
     mensaje.textContent = `Ganaste | Tiempo: ${display.textContent} | Usados: ${7 - intentos} | Restantes: ${intentos}`;
   }
@@ -85,6 +87,7 @@ function comprobarFin() {
   if (intentos === 0 && !ganado) {
     crono.stop();
     jugando = false;
+    terminado = true; 
     musica.pause();
     mensaje.textContent = `Perdiste | Clave: ${password.join("")}`;
   }
@@ -94,6 +97,7 @@ function reset() {
   password = generarPassword();
   intentos = 7;
   jugando = true;
+  terminado = false; // RESETEA ESTADO
   intentosSpan.textContent = intentos;
   mensaje.textContent = "";
 
@@ -111,6 +115,8 @@ function reset() {
 }
 
 document.getElementById("start").onclick = () => {
+  if (terminado) return; 
+
   jugando = true;
   crono.start();
   musica.play();
@@ -124,7 +130,7 @@ document.getElementById("stop").onclick = () => {
 
 document.getElementById("reset").onclick = reset;
 
-//  activar audio tras primer clic (esto evita el bloqueo del navegador)
+// activar audio tras primer clic (evita bloqueo del navegador)
 document.body.addEventListener("click", () => {
   musica.play();
 }, { once: true });
