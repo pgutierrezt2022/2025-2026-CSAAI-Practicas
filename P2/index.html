@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego Clave Secreta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="crono.js"></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<h1>Adivina la clave</h1>
+
+<!-- 🎵 MÚSICA -->
+<audio id="musica" loop>
+  <source src="tictac.mp3" type="audio/mpeg">
+</audio>
+
+<div class="contenedor">
+
+  <!-- CLAVE -->
+  <div class="clave">
+    <span id="c0">*</span>
+    <span id="c1">*</span>
+    <span id="c2">*</span>
+    <span id="c3">*</span>
+  </div>
+
+  <!-- CRONO -->
+  <h2 id="display">0:0:0</h2>
+
+  <!-- INTENTOS -->
+  <p>Intentos restantes: <span id="intentos">7</span></p>
+
+  <!-- MENSAJE FINAL -->
+  <p id="mensaje"></p>
+
+  <!-- BOTONES -->
+  <div class="teclado" id="teclado"></div>
+
+  <!-- CONTROL -->
+  <div class="controles">
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="reset">Reset</button>
+  </div>
+
+</div>
+
+</body>
+</html>
