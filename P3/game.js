@@ -40,7 +40,7 @@ const player = {
 let bullets = [];
 let enemyBullets = [];
 
-// ===== EXPLOSIONES 👇
+// ===== EXPLOSIONES 
 let explosions = [];
 
 // ===== ENEMIGOS =====
@@ -235,7 +235,7 @@ function resetGame() {
 
     bullets = [];
     enemyBullets = [];
-    explosions = []; // 👈 limpiar explosiones
+    explosions = []; 
 
     score = 0;
     gameOver = false;
