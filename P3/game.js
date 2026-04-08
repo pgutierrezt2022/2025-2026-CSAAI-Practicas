@@ -16,7 +16,7 @@ santaImg.src = "assets/santa.png";
 
 // ===== SONIDOS =====
 const shootSound = new Audio("assets/laser.mp3");
-const explosionSound = new Audio("assets/explosion.mp3");
+const explosionSound = new Audio("assets/explosionn.mp3");
 const winSound = new Audio("assets/win.mp3");
 const loseSound = new Audio("assets/lose.mp3");
 
