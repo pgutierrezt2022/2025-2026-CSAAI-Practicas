@@ -14,6 +14,10 @@ reindeerImg.src = "assets/reindeer.png";
 const santaImg = new Image();
 santaImg.src = "assets/santa.png";
 
+// 👇 NUEVO: EXPLOSIÓN
+const explosionImg = new Image();
+explosionImg.src = "assets/explosion.gif";
+
 // ===== SONIDOS =====
 const shootSound = new Audio("assets/laser.mp3");
 const explosionSound = new Audio("assets/explosionn.mp3");
@@ -35,6 +39,9 @@ const player = {
 // ===== BALAS =====
 let bullets = [];
 let enemyBullets = [];
+
+// ===== EXPLOSIONES 👇
+let explosions = [];
 
 // ===== ENEMIGOS =====
 let enemies = [];
@@ -63,7 +70,7 @@ function createEnemies() {
         for (let c = 0; c < cols; c++) {
             enemies.push({
                 x: c * 80 + 60,
-                y: r * 60 + 60, // 👈 un poco más abajo
+                y: r * 60 + 60,
                 width: 40,
                 height: 40
             });
@@ -74,7 +81,7 @@ createEnemies();
 
 // ===== DISPARO =====
 function shoot() {
-    if (player.energy > 0) {
+    if (player.energy > 0 && !gameOver) {
         bullets.push({
             x: player.x + player.width / 2,
             y: player.y
@@ -136,7 +143,7 @@ function update() {
 
     enemySpeed = 1 + (24 - enemies.length) * 0.1;
 
-    // Balas jugador
+    // ===== BALAS JUGADOR =====
     bullets.forEach((b, i) => {
         b.y -= 5;
 
@@ -147,6 +154,14 @@ function update() {
                 b.y < e.y + e.height &&
                 b.y > e.y
             ) {
+                // 💥 CREAR EXPLOSIÓN
+                explosions.push({
+                    x: e.x + e.width / 2 - 25,
+                    y: e.y + e.height / 2 - 25,
+                    size: 50,
+                    time: 20
+                });
+
                 enemies.splice(j, 1);
                 bullets.splice(i, 1);
                 score += 10;
@@ -157,7 +172,7 @@ function update() {
         });
     });
 
-    // Balas enemigo
+    // ===== BALAS ENEMIGO =====
     enemyBullets.forEach((b, i) => {
         b.y += 4;
 
@@ -169,6 +184,14 @@ function update() {
         ) {
             enemyBullets.splice(i, 1);
             player.lives--;
+        }
+    });
+
+    // ===== ACTUALIZAR EXPLOSIONES =====
+    explosions.forEach((exp, i) => {
+        exp.time--;
+        if (exp.time <= 0) {
+            explosions.splice(i, 1);
         }
     });
 
@@ -188,16 +211,14 @@ function update() {
     }
 }
 
-// ===== MOSTRAR BOTÓN BIEN CENTRADO =====
+// ===== MOSTRAR BOTÓN =====
 function showResetButton() {
     const rect = canvas.getBoundingClientRect();
 
     resetBtn.style.display = "block";
 
-    // Espera a que tenga tamaño
     setTimeout(() => {
         const btnWidth = resetBtn.offsetWidth;
-
         const centerX = rect.left + canvas.width / 2;
 
         resetBtn.style.left = (centerX - btnWidth / 2) + "px";
@@ -205,7 +226,7 @@ function showResetButton() {
     }, 10);
 }
 
-// ===== RESET GAME =====
+// ===== RESET =====
 function resetGame() {
     player.x = canvas.width / 2 - 40;
     player.y = canvas.height - 80;
@@ -214,6 +235,7 @@ function resetGame() {
 
     bullets = [];
     enemyBullets = [];
+    explosions = []; // 👈 limpiar explosiones
 
     score = 0;
     gameOver = false;
@@ -239,6 +261,11 @@ function draw() {
     // SANTAS
     enemies.forEach(e => {
         ctx.drawImage(santaImg, e.x, e.y, e.width, e.height);
+    });
+
+    // 💥 DIBUJAR EXPLOSIONES
+    explosions.forEach(exp => {
+        ctx.drawImage(explosionImg, exp.x, exp.y, exp.size, exp.size);
     });
 
     // BALAS
