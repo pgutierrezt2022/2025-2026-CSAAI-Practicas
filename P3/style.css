@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* EFECTO NEÓN */
+canvas {
+    border: 3px solid #0ff;
+
+    /* Fondo negro semitransparente */
+    background: rgba(0, 0, 0, 0.6);
+
+    /* Efecto neón */
+    box-shadow:
+        0 0 10px #0ff,
+        0 0 20px #0ff,
+        0 0 40px #0ff;
+}
+
+
+
+
+#resetBtn {
+    position: absolute;
+    display: none;
+
+    padding: 15px 30px;
+    font-size: 20px;
+
+    background: black;
+    color: #0ff;
+    border: 2px solid #0ff;
+
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+
+    cursor: pointer;
+}
+
+
+
+body {
+    margin: 0;
+    background: url("assets/background.png") no-repeat center center fixed;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
