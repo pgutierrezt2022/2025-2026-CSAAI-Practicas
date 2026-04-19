@@ -22,7 +22,7 @@ let velocidad = 800;
 let musicaActiva = true;
 
 // ======================
-// CREAR GRID (CON IMÁGENES)
+// GRID
 // ======================
 function crearGrid(palabras) {
   grid.innerHTML = "";
@@ -31,15 +31,23 @@ function crearGrid(palabras) {
     const div = document.createElement("div");
     div.classList.add("card");
 
-    // Guardamos la palabra para usarla luego
+    // Guardamos la palabra
     div.dataset.palabra = p;
 
-    // Insertamos imagen + texto
-    div.innerHTML = `
-      <img src="img/${p.toLowerCase()}.png" alt="${p}" width="60">
-      <span>${p}</span>
-    `;
+    // Crear imagen
+    const img = document.createElement("img");
+    img.src = `img/${p.toLowerCase()}.png`;
+    img.alt = p;
 
+    // Crear texto
+    const span = document.createElement("span");
+    span.textContent = p;
+
+    // Añadir al div
+    div.appendChild(img);
+    div.appendChild(span);
+
+    // Añadir al grid
     grid.appendChild(div);
   });
 }
@@ -60,7 +68,6 @@ function generarNivel(nivel) {
     palabra2 = "PERA";
   }
 
-  // < Navidad (NUEVO)
   if (tipo === "navidad") {
     palabra1 = "SANTA";
     palabra2 = "RUDOLF";
@@ -107,7 +114,6 @@ function recorrerGrid() {
 
     cards[i].classList.add("active");
 
-    // Mostrar palabra correcta (no el HTML)
     mensaje.textContent = cards[i].dataset.palabra;
 
     i++;
@@ -221,7 +227,6 @@ stopBtn.onclick = () => {
   selectorSecuencia.disabled = false;
   nivelInicialSelect.disabled = false;
 
-  // Reset visual
   mensaje.textContent = 'Pulsa "Empezar"';
   nivelSpan.textContent = 1;
   tiempoSpan.textContent = 0;

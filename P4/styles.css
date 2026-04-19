@@ -1,7 +1,6 @@
 /* IMPORTAR FUENTE */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
 
-/* =% EVITA FRANJA BLANCA */
 html, body {
   height: 100%;
   margin: 0;
@@ -15,7 +14,6 @@ body {
 
   min-height: 100vh;
 
-  /* Fondo con capa oscura para que se vea mejor */
   background-image: 
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
     url("img/fondo.jpg");
@@ -132,7 +130,6 @@ button:hover {
   text-align: center;
 }
 
-/* EFECTO ACTIVO */
 .card.active {
   border: 4px solid red;
   background: #ffe66d;
