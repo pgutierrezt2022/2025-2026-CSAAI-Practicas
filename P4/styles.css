@@ -1,32 +1,40 @@
-/* IMPORTAR FUENTE CHULA */
+/* IMPORTAR FUENTE */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
 
+/* =% EVITA FRANJA BLANCA */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* BODY */
 body {
   font-family: 'Fredoka', sans-serif;
   text-align: center;
-  margin: 0;
+  color: white;
 
-  /*background: linear-gradient(135deg, #c8f7c5, #a8e6cf);*/
-  background-image: url("img/fondo.jpg");
-  background-size: cover;       /* ocupa toda la pantalla */
-  background-position: center;  /* centrado */
-  background-repeat: no-repeat; /* sin repetir */
+  min-height: 100vh;
+
+  /* Fondo con capa oscura para que se vea mejor */
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("img/fondo.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-
-
-
-
-
 
 /* TITULO */
 h1 {
-  font-size: 36px;
+  font-size: 38px;
   margin-top: 20px;
+  text-shadow: 2px 2px 6px black;
 }
 
 /* PANEL */
 .panel {
-  background: rgba(255,255,255,0.7);
+  background: rgba(0,0,0,0.6);
   padding: 20px;
   margin: 20px auto;
   border-radius: 20px;
@@ -76,9 +84,10 @@ button:hover {
 
 /* MENSAJE */
 #mensaje {
-  font-size: 28px;
+  font-size: 30px;
   margin-top: 20px;
   font-weight: 600;
+  text-shadow: 2px 2px 6px black;
 }
 
 /* GRID */
@@ -102,7 +111,9 @@ button:hover {
   align-items: center;
   justify-content: center;
 
+  color: black; /* texto dentro de cartas negro */
   font-weight: bold;
+
   box-shadow: 0 6px 15px rgba(0,0,0,0.25);
   transition: 0.2s;
 }
