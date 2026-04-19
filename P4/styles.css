@@ -1,23 +1,28 @@
+/* IMPORTAR FUENTE CHULA */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Fredoka', sans-serif;
   text-align: center;
-  background: linear-gradient(135deg, #c8f7c5, #a8e6cf);
   margin: 0;
+
+  background: linear-gradient(135deg, #c8f7c5, #a8e6cf);
 }
 
 /* TITULO */
 h1 {
+  font-size: 36px;
   margin-top: 20px;
 }
 
 /* PANEL */
 .panel {
-  background: rgba(255,255,255,0.6);
-  padding: 15px;
+  background: rgba(255,255,255,0.7);
+  padding: 20px;
   margin: 20px auto;
-  border-radius: 15px;
+  border-radius: 20px;
   width: 90%;
-  max-width: 600px;
+  max-width: 700px;
   backdrop-filter: blur(10px);
 }
 
@@ -25,12 +30,13 @@ h1 {
 .info {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
 }
 
 /* CONFIG */
 .config {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .config label {
@@ -43,63 +49,66 @@ h1 {
 }
 
 button {
-  padding: 8px 14px;
+  padding: 10px 16px;
   margin: 5px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   background: #222;
   color: white;
+  font-size: 14px;
   transition: 0.2s;
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
   background: #444;
 }
 
 /* MENSAJE */
 #mensaje {
-  font-size: 24px;
+  font-size: 28px;
   margin-top: 20px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 90px);
-  gap: 15px;
+  grid-template-columns: repeat(4, 130px);
+  gap: 20px;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 /* CARTAS */
 .card {
-  width: 90px;
-  height: 90px;
+  width: 130px;
+  height: 130px;
   background: white;
-  border-radius: 15px;
+  border-radius: 20px;
 
   display: flex;
-  flex-direction: column;   /* =% ESTO ES LA CLAVE */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
   font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
   transition: 0.2s;
 }
 
+/* IMÁGENES */
 .card img {
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
+/* TEXTO */
 .card span {
-  font-size: 10px;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -107,17 +116,35 @@ button:hover {
 .card.active {
   border: 4px solid red;
   background: #ffe66d;
-  transform: scale(1.1);
+  transform: scale(1.15);
+  box-shadow: 0 0 20px rgba(255,0,0,0.6);
 }
 
 /* RESPONSIVE */
 @media (max-width: 500px) {
   .grid {
-    grid-template-columns: repeat(4, 70px);
+    grid-template-columns: repeat(4, 90px);
   }
 
   .card {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
+  }
+
+  .card img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card span {
+    font-size: 11px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  #mensaje {
+    font-size: 20px;
   }
 }
