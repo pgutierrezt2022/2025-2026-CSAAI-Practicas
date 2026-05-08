@@ -1,27 +1,32 @@
 const canvas = document.getElementById('game-canvas');
 const ctx = canvas.getContext('2d');
+
 const menuScreen = document.getElementById('menu-screen');
 const gameScreen = document.getElementById('game-screen');
 const finalScreen = document.getElementById('final-screen');
+
 const messageOverlay = document.getElementById('message-overlay');
 const messageText = document.getElementById('message-text');
 const countdownOverlay = document.getElementById('countdown');
 const countdownNumber = document.getElementById('countdown-number');
+
 const btn3Goals = document.getElementById('btn-3-goals');
 const btnGoldenGoal = document.getElementById('btn-golden-goal');
 const btnResetBall = document.getElementById('btn-reset-ball');
 const btnRestart = document.getElementById('btn-restart');
 const btnMenu = document.getElementById('btn-menu');
+const btnMenuLive = document.getElementById('btn-menu-live');   // ← NUEVO
+
 const scorePlayerText = document.getElementById('score-player');
 const scoreRivalText = document.getElementById('score-rival');
 const modeText = document.getElementById('mode-text');
+
 const finalTitle = document.getElementById('final-title');
 const finalResult = document.getElementById('final-result');
 
 const config = {
     width: 1000,
     height: 750,
-    fieldMargin: 50,
     goalWidth: 70,
     goalHeight: 220,
     lineWidth: 6,
@@ -47,84 +52,21 @@ const keys = {
     Space: false,
 };
 
-const players = [
-    {
-        x: 0,
-        y: 0,
-        radius: 24,
-        color: '#2e91ff',
-        speed: 6.5,
-        shootPower: 12,
-        controlled: true,
-    },
-    {
-        x: 0,
-        y: 0,
-        radius: 24,
-        color: '#72b3ff',
-        speed: 5.2,
-        kickCooldown: 0,
-    },
-    {
-        x: 0,
-        y: 0,
-        radius: 24,
-        color: '#72b3ff',
-        speed: 5.2,
-        kickCooldown: 0,
-    },
-];
-
-const bots = [
-    {
-        x: 0,
-        y: 0,
-        radius: 24,
-        color: '#ff0000',
-        speed: 5.2,
-        role: 'attack',
-        kickCooldown: 0,
-    },
-    {
-        x: 0,
-        y: 0,
-        radius: 24,
-        color: '#cc0000',
-        speed: 4.9,
-        role: 'mid',
-        kickCooldown: 0,
-    },
-    {
-        x: 0,
-        y: 0,
-        radius: 24,
-        color: '#990000',
-        speed: 4.7,
-        role: 'defend',
-        kickCooldown: 0,
-    },
-];
-
-const ball = {
-    x: 0,
-    y: 0,
-    radius: 14,
-    vx: 0,
-    vy: 0,
-    color: '#ffffff',
-};
+const players = [ /* ... mismo código de players ... */ ];
+const bots = [ /* ... mismo código de bots ... */ ];
+const ball = { /* ... mismo código de ball ... */ };
 
 let playerScore = 0;
 let rivalScore = 0;
-let lastTime = 0;
 let pauseTimeout = null;
 
 canvas.width = config.width;
 canvas.height = config.height;
 
+
 // ==================== FUNCIONES ====================
 
-function showScreen(screen) {
+function showScreen(screen) { 
     menuScreen.classList.toggle('hidden', screen !== 'menu');
     gameScreen.classList.toggle('hidden', screen !== 'game');
     finalScreen.classList.toggle('hidden', screen !== 'final');
@@ -661,7 +603,7 @@ function resetGame() {
     hideMessage();
     hideCountdown();
     showScreen('menu');
-}
+}  
 
 // ==================== EVENTOS ====================
 
@@ -683,6 +625,11 @@ btnResetBall.addEventListener('click', () => {
     setTimeout(hideMessage, 1200);
 });
 
+// Botón "Menú principal" dentro del juego
+btnMenuLive.addEventListener('click', () => {
+    resetGame();
+});
+
 btnRestart.addEventListener('click', () => {
     showScreen('game');
     initializeGame();
@@ -692,6 +639,7 @@ btnMenu.addEventListener('click', () => {
     resetGame();
 });
 
+// Controles de teclado
 window.addEventListener('keydown', (event) => {
     if (event.code in keys) {
         keys[event.code] = true;
