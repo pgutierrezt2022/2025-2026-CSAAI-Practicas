@@ -1,19 +1,12 @@
-/* =========================================================
-   BOT LEAGUE - ESTILOS PRINCIPALES DEL JUEGO
-   Tema visual renovado
-========================================================= */
-
-/* ===== Reset General ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ===== Fondo Principal ===== */
 body {
-    font-family: 'Trebuchet MS', 'Arial', sans-serif;
-    background: linear-gradient(135deg, #14213d 0%, #0b1320 100%);
+    font-family: 'Trebuchet MS', 'Arial Narrow', sans-serif;
+    background: linear-gradient(145deg, #101820 0%, #182c25 45%, #08110d 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -21,372 +14,262 @@ body {
     overflow: hidden;
 }
 
-/* ===== Contenedor General ===== */
 #game-container {
     width: 100%;
-    max-width: 1000px;
-    aspect-ratio: 4/3;
+    max-width: 920px;
+    aspect-ratio: 16/10;
     position: relative;
 }
 
-/* =========================================================
-   PANTALLAS GENERALES
-========================================================= */
 .screen {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
+    inset: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    border-radius: 14px;
+    border-radius: 18px;
     overflow: hidden;
 }
 
-/* Pantalla visible */
 .screen.active {
     display: flex;
 }
 
-/* Pantalla oculta */
 .screen.hidden {
     display: none;
 }
 
-/* =========================================================
-   MENÚ PRINCIPAL
-========================================================= */
 #menu-screen {
-    background: linear-gradient(180deg, #243b55 0%, #1b2a41 55%, #101820 100%);
-    border: 4px solid #4f6d8a;
+    background: linear-gradient(180deg, #243b55 0%, #16222a 55%, #0d141a 100%);
+    border: 5px solid #5dade2;
     box-shadow:
-        0 0 35px rgba(0, 0, 0, 0.55),
-        inset 0 0 70px rgba(0, 0, 0, 0.25);
+        0 0 40px rgba(0, 0, 0, 0.6),
+        inset 0 0 80px rgba(255, 255, 255, 0.04);
 }
 
-/* Título principal */
 #menu-screen h1 {
-    font-size: 3.4rem;
-    color: #ffb703;
+    font-size: 4rem;
+    color: #7df9ff;
     text-shadow:
-        3px 3px 0 #a86d00,
-        0 0 22px rgba(255, 183, 3, 0.5);
-
-    margin-bottom: 0.6rem;
-    letter-spacing: 3px;
+        4px 4px 0 #116466,
+        0 0 24px rgba(125, 249, 255, 0.7);
+    margin-bottom: 0.8rem;
+    letter-spacing: 4px;
 }
 
-/* Subtítulo */
 #menu-screen .subtitle {
-    font-size: 1.2rem;
-    color: #d9e6f2;
-
-    margin-bottom: 2.4rem;
-
+    font-size: 1.15rem;
+    color: #d9f0ff;
+    margin-bottom: 3rem;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 6px;
 }
 
-/* Contenedor de botones */
 .menu-options {
     display: flex;
     flex-direction: column;
-    gap: 1.1rem;
-
-    margin-bottom: 2rem;
+    gap: 1.4rem;
+    margin-bottom: 2.5rem;
 }
 
-/* =========================================================
-   BOTONES DEL MENÚ
-========================================================= */
 .menu-btn {
-    padding: 1rem 2.6rem;
-
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #ffffff;
-
-    background: linear-gradient(180deg, #3a86ff 0%, #265dbe 100%);
-    border: 3px solid #6ea8ff;
-    border-radius: 10px;
-
+    padding: 1.1rem 3rem;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #f4faff;
+    background: linear-gradient(180deg, #8e44ad 0%, #5e3370 100%);
+    border: 2px solid #d7aefb;
+    border-radius: 14px;
     cursor: pointer;
-    transition: all 0.25s ease;
-
+    transition: all 0.18s ease;
     text-transform: uppercase;
-    letter-spacing: 1px;
-
-    box-shadow: 0 5px 18px rgba(58, 134, 255, 0.35);
+    letter-spacing: 2px;
+    box-shadow: 0 6px 18px rgba(142, 68, 173, 0.45);
 }
 
-/* Hover del botón */
 .menu-btn:hover {
-    transform: translateY(-4px);
-
-    background: linear-gradient(180deg, #6ea8ff 0%, #3a86ff 100%);
-
-    box-shadow: 0 7px 28px rgba(58, 134, 255, 0.55);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 10px 28px rgba(142, 68, 173, 0.65);
+    background: linear-gradient(180deg, #b06fd3 0%, #8e44ad 100%);
 }
 
-/* Click del botón */
 .menu-btn:active {
-    transform: translateY(0);
+    transform: scale(0.98);
 }
 
-/* Botón especial */
 #btn-golden-goal {
-    background: linear-gradient(180deg, #ffb703 0%, #c98b00 100%);
-    border-color: #ffd166;
-
-    box-shadow: 0 5px 18px rgba(255, 183, 3, 0.4);
+    background: linear-gradient(180deg, #ffb347 0%, #ff7b00 100%);
+    border-color: #ffd89c;
+    box-shadow: 0 6px 18px rgba(255, 140, 0, 0.45);
 }
 
-/* Hover botón especial */
 #btn-golden-goal:hover {
-    background: linear-gradient(180deg, #ffd166 0%, #ffb703 100%);
-
-    box-shadow: 0 7px 28px rgba(255, 183, 3, 0.6);
+    background: linear-gradient(180deg, #ffd089 0%, #ff9f1c 100%);
+    box-shadow: 0 10px 28px rgba(255, 166, 0, 0.65);
 }
 
-/* =========================================================
-   SECCIÓN DE INSTRUCCIONES
-========================================================= */
 .instructions {
-    background: rgba(255, 255, 255, 0.08);
-
-    padding: 1.3rem 2.1rem;
-
-    border-radius: 10px;
-    border: 2px solid #4f6d8a;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 1.5rem 2.4rem;
+    border-radius: 14px;
+    border: 1px solid rgba(125, 249, 255, 0.25);
+    backdrop-filter: blur(6px);
 }
 
-/* Título instrucciones */
 .instructions h3 {
-    color: #ffb703;
+    color: #7df9ff;
+    margin-bottom: 0.7rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
 
-    margin-bottom: 0.6rem;
+.instructions p {
+    color: #edf6ff;
+    font-size: 0.9rem;
+    margin: 0.45rem 0;
+}
 
-    font-size: 1rem;
+#game-screen {
+    background: #132226;
+    padding: 0;
+}
+
+#scoreboard {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    background: rgba(7, 12, 18, 0.78);
+    padding: 0.7rem 1.8rem;
+    border-radius: 14px;
+    border: 2px solid #7df9ff;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+}
+
+.team-score {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.team-name {
+    color: #d9f0ff;
+    font-size: 0.85rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-/* Texto instrucciones */
-.instructions p {
-    color: #edf2f4;
-
-    font-size: 0.95rem;
-    margin: 0.35rem 0;
-}
-
-/* =========================================================
-   PANTALLA DE JUEGO
-========================================================= */
-#game-screen {
-    background: #102542;
-    padding: 0;
-}
-
-/* =========================================================
-   MARCADOR SUPERIOR
-========================================================= */
-#scoreboard {
-    position: absolute;
-
-    top: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-
-    background: rgba(5, 10, 20, 0.75);
-
-    padding: 0.6rem 1.6rem;
-
-    border-radius: 10px;
-    border: 2px solid #ffb703;
-
-    z-index: 10;
-}
-
-/* Equipos */
-.team-score {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-/* Nombre del equipo */
-.team-name {
-    color: #d9e6f2;
-
-    font-size: 0.9rem;
-    font-weight: bold;
-
-    text-transform: uppercase;
-}
-
-/* Puntuación */
 .score {
-    color: #ffb703;
-
-    font-size: 1.9rem;
-    font-weight: bold;
-
-    min-width: 1.6rem;
+    color: #7df9ff;
+    font-size: 2rem;
+    font-weight: 900;
+    min-width: 2rem;
     text-align: center;
 }
 
-/* Separador */
 .score-separator {
-    color: #ffb703;
-
-    font-size: 1.5rem;
-    font-weight: bold;
+    color: #ffb347;
+    font-size: 1.7rem;
+    font-weight: 800;
 }
 
-/* =========================================================
-   MODO DE JUEGO
-========================================================= */
 #game-mode-display {
     position: absolute;
-
-    top: 62px;
+    top: 74px;
     left: 50%;
     transform: translateX(-50%);
-
     display: flex;
     align-items: center;
-    gap: 0.8rem;
-
-    background: rgba(10, 15, 25, 0.55);
-
-    padding: 0.5rem 1rem;
-
-    border-radius: 6px;
-
+    gap: 1rem;
+    background: rgba(10, 15, 20, 0.55);
+    padding: 0.65rem 1.2rem;
+    border-radius: 10px;
     z-index: 10;
+    backdrop-filter: blur(4px);
 }
 
-/* Botón menú rápido */
 #btn-menu-live {
-    margin-left: 0.3rem;
-
-    background: linear-gradient(180deg, #5c677d 0%, #343a40 100%);
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    margin-left: 0.35rem;
+    background: linear-gradient(180deg, #546e7a 0%, #263238 100%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
-/* Hover botón menú rápido */
 #btn-menu-live:hover {
-    background: linear-gradient(180deg, #adb5bd 0%, #5c677d 100%);
+    background: linear-gradient(180deg, #90a4ae 0%, #546e7a 100%);
 }
 
-/* Texto modo */
 #mode-text {
-    color: #d9e6f2;
-
-    font-size: 0.8rem;
-
+    color: #d9f0ff;
+    font-size: 0.78rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
-/* =========================================================
-   BOTONES PEQUEÑOS
-========================================================= */
 .small-btn {
-    padding: 0.35rem 0.85rem;
-
-    font-size: 0.8rem;
-    color: #ffffff;
-
-    background: rgba(255, 255, 255, 0.12);
-
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 7px;
-
+    padding: 0.45rem 0.95rem;
+    font-size: 0.75rem;
+    color: #f4faff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
     cursor: pointer;
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
+    transition: all 0.18s ease;
 }
 
-/* Hover botones pequeños */
 .small-btn:hover {
-    background: rgba(255, 255, 255, 0.22);
-
+    background: rgba(125, 249, 255, 0.18);
     transform: translateY(-2px);
 }
 
-/* Canvas del juego */
 #game-canvas {
     width: 100%;
     height: 100%;
     display: block;
 }
 
-/* =========================================================
-   OVERLAYS
-========================================================= */
 .overlay {
     position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-
     z-index: 20;
-
     pointer-events: none;
 }
 
-/* Overlay oculto */
 .overlay.hidden {
     display: none;
 }
 
-/* Mensaje de gol */
 #message-overlay {
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.72);
 }
 
-/* Texto central */
 #message-text {
-    font-size: 4rem;
-    font-weight: bold;
-
-    color: #ffb703;
-
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #7df9ff;
     text-shadow:
-        0 0 35px rgba(255, 183, 3, 0.8),
-        3px 3px 0 #a86d00;
-
-    animation: goalPulse 0.5s ease-out;
+        0 0 36px rgba(125, 249, 255, 0.85),
+        4px 4px 0 #116466;
+    animation: goalPulse 0.45s ease-out;
 }
 
-/* Animación gol */
 @keyframes goalPulse {
     0% {
-        transform: scale(0.5);
+        transform: scale(0.4) rotate(-4deg);
         opacity: 0;
     }
 
     50% {
-        transform: scale(1.18);
+        transform: scale(1.18) rotate(2deg);
     }
 
     100% {
@@ -395,156 +278,114 @@ body {
     }
 }
 
-/* Cuenta regresiva */
 #countdown {
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(5, 8, 12, 0.82);
 }
 
-/* Número countdown */
 #countdown-number {
-    font-size: 8rem;
-    font-weight: bold;
-
-    color: #ffb703;
-
-    text-shadow: 0 0 45px rgba(255, 183, 3, 0.8);
-
-    animation: countdownPulse 1s ease-in-out infinite;
+    font-size: 9rem;
+    font-weight: 900;
+    color: #ffb347;
+    text-shadow: 0 0 45px rgba(255, 179, 71, 0.85);
+    animation: countdownPulse 0.85s ease-in-out infinite;
 }
 
-/* Animación countdown */
 @keyframes countdownPulse {
     0%, 100% {
         transform: scale(1);
     }
 
     50% {
-        transform: scale(1.12);
+        transform: scale(1.15);
     }
 }
 
-/* =========================================================
-   PANTALLA FINAL
-========================================================= */
 #final-screen {
-    background: linear-gradient(180deg, #1b2a41 0%, #101820 100%);
-
-    border: 4px solid #4f6d8a;
-
-    box-shadow: 0 0 35px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(180deg, #16222a 0%, #0d141a 100%);
+    border: 5px solid #5dade2;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.65);
 }
 
-/* Título final */
 #final-title {
-    font-size: 3rem;
-
-    margin-bottom: 1rem;
-
+    font-size: 3.4rem;
+    margin-bottom: 1.2rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
 }
 
-/* Victoria */
 #final-title.victory {
-    color: #ffb703;
-
-    text-shadow: 0 0 22px rgba(255, 183, 3, 0.5);
+    color: #7df9ff;
+    text-shadow: 0 0 24px rgba(125, 249, 255, 0.7);
 }
 
-/* Derrota */
 #final-title.defeat {
-    color: #ef476f;
-
-    text-shadow: 0 0 22px rgba(239, 71, 111, 0.5);
+    color: #ff6b81;
+    text-shadow: 0 0 24px rgba(255, 107, 129, 0.7);
 }
 
-/* Resultado final */
 #final-result {
-    font-size: 1.3rem;
-
-    color: #edf2f4;
-
-    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    color: #edf6ff;
+    margin-bottom: 2.5rem;
 }
 
-/* Botones finales */
 .final-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.4rem;
 }
 
-/* Botón reiniciar */
 #btn-restart {
-    background: linear-gradient(180deg, #06d6a0 0%, #029c74 100%);
-    border-color: #52e0be;
+    background: linear-gradient(180deg, #00c896 0%, #008f68 100%);
+    border-color: #7fffd4;
 }
 
-/* Hover reiniciar */
 #btn-restart:hover {
-    background: linear-gradient(180deg, #52e0be 0%, #06d6a0 100%);
+    background: linear-gradient(180deg, #53ffd0 0%, #00c896 100%);
 }
 
-/* Botón menú */
 #btn-menu {
-    background: linear-gradient(180deg, #6c757d 0%, #495057 100%);
-    border-color: #ced4da;
+    background: linear-gradient(180deg, #607d8b 0%, #37474f 100%);
+    border-color: #b0bec5;
 }
 
-/* Hover menú */
 #btn-menu:hover {
-    background: linear-gradient(180deg, #ced4da 0%, #6c757d 100%);
+    background: linear-gradient(180deg, #b0bec5 0%, #607d8b 100%);
 }
 
-/* =========================================================
-   RESPONSIVE TABLET
-========================================================= */
 @media (max-width: 768px) {
-
-    /* Título principal */
     #menu-screen h1 {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
 
-    /* Botones menú */
     .menu-btn {
-        padding: 0.85rem 2rem;
-        font-size: 1.05rem;
+        padding: 0.9rem 2.3rem;
+        font-size: 1rem;
     }
 
-    /* Marcador */
     #scoreboard {
-        padding: 0.45rem 1rem;
+        padding: 0.5rem 1.2rem;
     }
 
-    /* Puntuación */
     .score {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 }
 
-/* =========================================================
-   RESPONSIVE MÓVIL
-========================================================= */
 @media (max-width: 480px) {
-
-    /* Título principal */
     #menu-screen h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
-    /* Subtítulo */
     #menu-screen .subtitle {
-        font-size: 1rem;
-        letter-spacing: 2px;
+        font-size: 0.9rem;
+        letter-spacing: 3px;
     }
 
-    /* Caja instrucciones */
     .instructions {
-        padding: 1rem 1.4rem;
+        padding: 1.1rem 1.4rem;
     }
 
-    /* Texto instrucciones */
     .instructions p {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 }
