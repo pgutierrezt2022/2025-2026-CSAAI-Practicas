@@ -15,7 +15,7 @@ const btnGoldenGoal = document.getElementById('btn-golden-goal');
 const btnResetBall = document.getElementById('btn-reset-ball');
 const btnRestart = document.getElementById('btn-restart');
 const btnMenu = document.getElementById('btn-menu');
-const btnMenuLive = document.getElementById('btn-menu-live');   // ← NUEVO
+const btnMenuLive = document.getElementById('btn-menu-live');   
 
 const scorePlayerText = document.getElementById('score-player');
 const scoreRivalText = document.getElementById('score-rival');
@@ -52,9 +52,71 @@ const keys = {
     Space: false,
 };
 
-const players = [ /* ... mismo código de players ... */ ];
-const bots = [ /* ... mismo código de bots ... */ ];
-const ball = { /* ... mismo código de ball ... */ };
+const players = [
+    {
+        x: 0,
+        y: 0,
+        radius: 24,
+        color: '#2e91ff',
+        speed: 6.5,
+        shootPower: 12,
+        controlled: true,
+    },
+    {
+        x: 0,
+        y: 0,
+        radius: 24,
+        color: '#72b3ff',
+        speed: 5.2,
+        kickCooldown: 0,
+    },
+    {
+        x: 0,
+        y: 0,
+        radius: 24,
+        color: '#72b3ff',
+        speed: 5.2,
+        kickCooldown: 0,
+    },
+];
+
+const bots = [
+    {
+        x: 0,
+        y: 0,
+        radius: 24,
+        color: '#ff0000',
+        speed: 5.2,
+        role: 'attack',
+        kickCooldown: 0,
+    },
+    {
+        x: 0,
+        y: 0,
+        radius: 24,
+        color: '#cc0000',
+        speed: 4.9,
+        role: 'mid',
+        kickCooldown: 0,
+    },
+    {
+        x: 0,
+        y: 0,
+        radius: 24,
+        color: '#990000',
+        speed: 4.7,
+        role: 'defend',
+        kickCooldown: 0,
+    },
+];
+
+const ball = {
+    x: 0,
+    y: 0,
+    radius: 14,
+    vx: 0,
+    vy: 0,
+};
 
 let playerScore = 0;
 let rivalScore = 0;
