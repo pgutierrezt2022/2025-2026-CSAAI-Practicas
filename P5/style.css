@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: 'Trebuchet MS', 'Arial Narrow', sans-serif;
-    background: linear-gradient(135deg, #3a7d44 0%, #183d24 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a472a 0%, #0d2818 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -16,19 +16,22 @@ body {
 
 #game-container {
     width: 100%;
-    max-width: 920px;
-    aspect-ratio: 16/10;
+    max-width: 1000px;
+    aspect-ratio: 4/3;
     position: relative;
 }
 
 .screen {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 18px;
+    border-radius: 12px;
     overflow: hidden;
 }
 
@@ -41,191 +44,184 @@ body {
 }
 
 #menu-screen {
-    background: linear-gradient(180deg, #356f46 0%, #21442c 55%, #14281a 100%);
-    border: 5px solid #7df9ff;
-    box-shadow:
-        0 0 40px rgba(0, 0, 0, 0.55),
-        inset 0 0 70px rgba(255, 255, 255, 0.03);
+    background: linear-gradient(180deg, #2d5a3d 0%, #1a3d28 50%, #0f2417 100%);
+    border: 4px solid #4a7c59;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), inset 0 0 60px rgba(0, 0, 0, 0.3);
 }
 
 #menu-screen h1 {
-    font-size: 4rem;
-    color: #ffffff;
-    text-shadow:
-        4px 4px 0 #0c3b20,
-        0 0 22px rgba(255, 255, 255, 0.35);
-    margin-bottom: 0.8rem;
-    letter-spacing: 4px;
+    font-size: 3.5rem;
+    color: #ffd700;
+    text-shadow: 3px 3px 0 #b8860b, 0 0 20px rgba(255, 215, 0, 0.5);
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
 }
 
 #menu-screen .subtitle {
-    font-size: 1.15rem;
-    color: #d9f0ff;
-    margin-bottom: 3rem;
+    font-size: 1.3rem;
+    color: #a8d5a2;
+    margin-bottom: 2.5rem;
     text-transform: uppercase;
-    letter-spacing: 6px;
+    letter-spacing: 4px;
 }
 
 .menu-options {
     display: flex;
     flex-direction: column;
-    gap: 1.4rem;
-    margin-bottom: 2.5rem;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 .menu-btn {
-    padding: 1.1rem 3rem;
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: #ffffff;
-    background: linear-gradient(180deg, #5b8def 0%, #2e5cb8 100%);
-    border: 2px solid #b8d2ff;
-    border-radius: 14px;
+    padding: 1rem 2.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(180deg, #e63946 0%, #b91c1c 100%);
+    border: 3px solid #ff6b6b;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.18s ease;
+    transition: all 0.2s ease;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    box-shadow: 0 6px 18px rgba(46, 92, 184, 0.45);
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
 }
 
 .menu-btn:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 10px 28px rgba(46, 92, 184, 0.65);
-    background: linear-gradient(180deg, #7aa8ff 0%, #4b78d1 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(230, 57, 70, 0.6);
+    background: linear-gradient(180deg, #ff6b6b 0%, #e63946 100%);
 }
 
 .menu-btn:active {
-    transform: scale(0.98);
+    transform: translateY(0);
 }
 
 #btn-golden-goal {
-    background: linear-gradient(180deg, #ffcf5a 0%, #ff9800 100%);
-    border-color: #ffe8a3;
-    box-shadow: 0 6px 18px rgba(255, 152, 0, 0.45);
+    background: linear-gradient(180deg, #ffd700 0%, #b8860b 100%);
+    border-color: #ffe66d;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
 }
 
 #btn-golden-goal:hover {
-    background: linear-gradient(180deg, #ffe08a 0%, #ffb547 100%);
-    box-shadow: 0 10px 28px rgba(255, 166, 0, 0.65);
+    background: linear-gradient(180deg, #ffe66d 0%, #ffd700 100%);
+    box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6);
 }
 
 .instructions {
-    background: rgba(255, 255, 255, 0.08);
-    padding: 1.5rem 2.4rem;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.2rem 2rem;
+    border-radius: 8px;
+    border: 2px solid #4a7c59;
 }
 
 .instructions h3 {
-    color: #ffffff;
-    margin-bottom: 0.7rem;
-    font-size: 1.1rem;
+    color: #ffd700;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 }
 
 .instructions p {
-    color: #f0f7ff;
-    font-size: 0.9rem;
-    margin: 0.45rem 0;
+    color: #c8e6c9;
+    font-size: 0.95rem;
+    margin: 0.3rem 0;
 }
 
+/* IMPORTANTE: mantener visibilidad del campo */
 #game-screen {
-    background: #2e8b57;
+    background: #1a472a;
     padding: 0;
 }
 
 #scoreboard {
     position: absolute;
-    top: 14px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    gap: 1.4rem;
-    background: rgba(15, 25, 35, 0.55);
-    padding: 0.7rem 1.8rem;
-    border-radius: 14px;
-    border: 2px solid #ffffff;
-    z-index: 10;
-    backdrop-filter: blur(4px);
-}
-
-.team-score {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.team-name {
-    color: #ffffff;
-    font-size: 0.85rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.score {
-    color: #ffe066;
-    font-size: 2rem;
-    font-weight: 900;
-    min-width: 2rem;
-    text-align: center;
-}
-
-.score-separator {
-    color: #ffffff;
-    font-size: 1.7rem;
-    font-weight: 800;
-}
-
-#game-mode-display {
-    position: absolute;
-    top: 74px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: rgba(15, 25, 35, 0.45);
-    padding: 0.65rem 1.2rem;
-    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    border: 2px solid #ffd700;
     z-index: 10;
-    backdrop-filter: blur(4px);
+}
+
+.team-score {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.team-name {
+    color: #a8d5a2;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.score {
+    color: #ffd700;
+    font-size: 1.8rem;
+    font-weight: bold;
+    min-width: 1.5rem;
+    text-align: center;
+}
+
+.score-separator {
+    color: #ffd700;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#game-mode-display {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    z-index: 10;
 }
 
 #btn-menu-live {
-    margin-left: 0.35rem;
-    background: linear-gradient(180deg, #607d8b 0%, #37474f 100%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-left: 0.25rem;
+    background: linear-gradient(180deg, #757575 0%, #424242 100%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 #btn-menu-live:hover {
-    background: linear-gradient(180deg, #90a4ae 0%, #607d8b 100%);
+    background: linear-gradient(180deg, #bdbdbd 0%, #757575 100%);
 }
 
 #mode-text {
-    color: #ffffff;
-    font-size: 0.78rem;
+    color: #a8d5a2;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .small-btn {
-    padding: 0.45rem 0.95rem;
-    font-size: 0.75rem;
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 10px;
+    padding: 0.35rem 0.8rem;
+    font-size: 0.8rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.18s ease;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .small-btn:hover {
-    background: rgba(255, 255, 255, 0.18);
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
 }
 
 #game-canvas {
@@ -236,7 +232,10 @@ body {
 
 .overlay {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -249,143 +248,126 @@ body {
 }
 
 #message-overlay {
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 #message-text {
-    font-size: 4.5rem;
-    font-weight: 900;
-    color: #ffffff;
-    text-shadow:
-        0 0 20px rgba(0, 0, 0, 0.7),
-        3px 3px 0 #000000;
-    animation: goalPulse 0.45s ease-out;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 3px 3px 0 #b8860b;
+    animation: goalPulse 0.5s ease-out;
 }
 
 @keyframes goalPulse {
-    0% {
-        transform: scale(0.4) rotate(-4deg);
-        opacity: 0;
-    }
-
-    50% {
-        transform: scale(1.18) rotate(2deg);
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 #countdown {
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 #countdown-number {
-    font-size: 9rem;
-    font-weight: 900;
-    color: #ffffff;
-    text-shadow: 0 0 35px rgba(255, 255, 255, 0.75);
-    animation: countdownPulse 0.85s ease-in-out infinite;
+    font-size: 8rem;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+    animation: countdownPulse 1s ease-in-out infinite;
 }
 
 @keyframes countdownPulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.15);
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
 #final-screen {
-    background: linear-gradient(180deg, #24452d 0%, #14281a 100%);
-    border: 5px solid #7df9ff;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(180deg, #1a3d28 0%, #0d2417 100%);
+    border: 4px solid #4a7c59;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 #final-title {
-    font-size: 3.4rem;
-    margin-bottom: 1.2rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
 }
 
 #final-title.victory {
-    color: #ffffff;
-    text-shadow: 0 0 24px rgba(255, 255, 255, 0.55);
+    color: #ffd700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
 }
 
 #final-title.defeat {
-    color: #ff7b7b;
-    text-shadow: 0 0 24px rgba(255, 123, 123, 0.55);
+    color: #e63946;
+    text-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
 }
 
 #final-result {
-    font-size: 1.4rem;
-    color: #f0f7ff;
-    margin-bottom: 2.5rem;
+    font-size: 1.3rem;
+    color: #a8d5a2;
+    margin-bottom: 2rem;
 }
 
 .final-buttons {
     display: flex;
-    gap: 1.4rem;
+    gap: 1rem;
 }
 
 #btn-restart {
-    background: linear-gradient(180deg, #00c896 0%, #008f68 100%);
-    border-color: #7fffd4;
+    background: linear-gradient(180deg, #4caf50 0%, #2e7d32 100%);
+    border-color: #81c784;
 }
 
 #btn-restart:hover {
-    background: linear-gradient(180deg, #53ffd0 0%, #00c896 100%);
+    background: linear-gradient(180deg, #81c784 0%, #4caf50 100%);
 }
 
 #btn-menu {
-    background: linear-gradient(180deg, #607d8b 0%, #37474f 100%);
-    border-color: #b0bec5;
+    background: linear-gradient(180deg, #757575 0%, #424242 100%);
+    border-color: #bdbdbd;
 }
 
 #btn-menu:hover {
-    background: linear-gradient(180deg, #b0bec5 0%, #607d8b 100%);
+    background: linear-gradient(180deg, #bdbdbd 0%, #757575 100%);
 }
 
 @media (max-width: 768px) {
     #menu-screen h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
 
     .menu-btn {
-        padding: 0.9rem 2.3rem;
-        font-size: 1rem;
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
     }
 
     #scoreboard {
-        padding: 0.5rem 1.2rem;
+        padding: 0.4rem 1rem;
     }
 
     .score {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 }
 
 @media (max-width: 480px) {
     #menu-screen h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     #menu-screen .subtitle {
-        font-size: 0.9rem;
-        letter-spacing: 3px;
+        font-size: 1rem;
+        letter-spacing: 2px;
     }
 
     .instructions {
-        padding: 1.1rem 1.4rem;
+        padding: 1rem 1.5rem;
     }
 
     .instructions p {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 }
