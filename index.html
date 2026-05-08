@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot League - Fútbol 2D</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Menú Inicial -->
+        <div id="menu-screen" class="screen active">
+            <h1>⚽ Bot League</h1>
+            <p class="subtitle">Fútbol 2D Arcade</p>
+            <div class="menu-options">
+                <button id="btn-3-goals" class="menu-btn">Partido a 3 goles</button>
+                <button id="btn-golden-goal" class="menu-btn">Gol de Oro</button>
+            </div>
+            <div class="instructions">
+                <h3>Controles</h3>
+                <p>🡠🡢🡣🡤 - Mover jugador</p>
+                <p>ESPACIO - Chutar pelota</p>
+            </div>
+        </div>
+
+        <!-- Pantalla de Juego -->
+        <div id="game-screen" class="screen hidden">
+            <!-- Marcador -->
+            <div id="scoreboard">
+                <div class="team-score" id="player-score">
+                    <span class="team-name">Tú</span>
+                    <span class="score" id="score-player">0</span>
+                </div>
+                <div class="score-separator">-</div>
+                <div class="team-score" id="rival-score">
+                    <span class="score" id="score-rival">0</span>
+                    <span class="team-name">Rival</span>
+                </div>
+            </div>
+
+            <!-- Modalidad de juego -->
+            <div id="game-mode-display">
+                <span id="mode-text">Partido a 3 goles</span>
+                <button id="btn-reset-ball" class="small-btn">Reset pelota</button>
+                <button id="btn-menu-live" class="small-btn">Menú principal</button>
+            </div>
+
+
+            <!-- Canvas del juego -->
+            <canvas id="game-canvas"></canvas>
+
+            <!-- Mensajes overlay -->
+            <div id="message-overlay" class="overlay hidden">
+                <div id="message-text"></div>
+            </div>
+
+            <!-- Cuenta atrás -->
+            <div id="countdown" class="overlay hidden">
+                <div id="countdown-number">3</div>
+            </div>
+        </div>
+
+        <!-- Pantalla Final -->
+        <div id="final-screen" class="screen hidden">
+            <h1 id="final-title">¡Victoria!</h1>
+            <p id="final-result"></p>
+            <div class="final-buttons">
+                <button id="btn-restart" class="menu-btn">Jugar de nuevo</button>
+                <button id="btn-menu" class="menu-btn">Menú principal</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

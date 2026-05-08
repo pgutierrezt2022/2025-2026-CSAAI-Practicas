@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    color: white;
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.screen {
+    position: absolute;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#menu-screen,
+#final-screen {
+    text-align: center;
+}
+
+h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 24px;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+.menu-options,
+.final-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.menu-btn,
+.small-btn {
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.menu-btn {
+    padding: 18px 30px;
+    font-size: 20px;
+    background: #2e91ff;
+    color: white;
+}
+
+.small-btn {
+    padding: 10px 16px;
+    background: #333;
+    color: white;
+}
+
+.menu-btn:hover,
+.small-btn:hover {
+    transform: scale(1.05);
+}
+
+.instructions {
+    opacity: 0.85;
+    line-height: 1.8;
+}
+
+#game-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#scoreboard {
+
+    width: 1000px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 40px;
+
+    margin-bottom: 15px;
+
+    font-size: 28px;
+}
+
+.team-score {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.score {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+#game-mode-display {
+
+    width: 1000px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+#game-canvas {
+    border: 4px solid white;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+}
+
+.overlay {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: rgba(0,0,0,0.7);
+
+    padding: 30px 50px;
+
+    border-radius: 16px;
+
+    font-size: 52px;
+    font-weight: bold;
+
+    z-index: 100;
+}
+
+#countdown-number {
+    font-size: 80px;
+}
