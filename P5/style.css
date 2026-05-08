@@ -1,243 +1,550 @@
-/* Bot League - Estilos Originales Mejorados */
+/* =========================================================
+   BOT LEAGUE - ESTILOS PRINCIPALES DEL JUEGO
+   Tema visual renovado
+========================================================= */
+
+/* ===== Reset General ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== Fondo Principal ===== */
 body {
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    background: linear-gradient(135deg, #0f1f1a 0%, #05100d 100%);
+    font-family: 'Trebuchet MS', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #14213d 0%, #0b1320 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    color: #e0f2e9;
 }
 
+/* ===== Contenedor General ===== */
 #game-container {
     width: 100%;
     max-width: 1000px;
     aspect-ratio: 4/3;
     position: relative;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
 }
 
-/* ==================== PANTALLAS ==================== */
+/* =========================================================
+   PANTALLAS GENERALES
+========================================================= */
 .screen {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: none;
+
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 16px;
+
+    border-radius: 14px;
+    overflow: hidden;
 }
 
+/* Pantalla visible */
 .screen.active {
     display: flex;
 }
 
-/* Menú Principal */
-#menu-screen {
-    background: linear-gradient(180deg, #1a3a2f 0%, #0f221b 50%, #08140f 100%);
-    border: 5px solid #00ff9d;
-    box-shadow: 0 0 40px rgba(0, 255, 157, 0.3),
-                inset 0 0 60px rgba(0, 0, 0, 0.4);
+/* Pantalla oculta */
+.screen.hidden {
+    display: none;
 }
 
+/* =========================================================
+   MENÚ PRINCIPAL
+========================================================= */
+#menu-screen {
+    background: linear-gradient(180deg, #243b55 0%, #1b2a41 55%, #101820 100%);
+    border: 4px solid #4f6d8a;
+    box-shadow:
+        0 0 35px rgba(0, 0, 0, 0.55),
+        inset 0 0 70px rgba(0, 0, 0, 0.25);
+}
+
+/* Título principal */
 #menu-screen h1 {
-    font-size: 3.8rem;
-    font-weight: 900;
-    background: linear-gradient(90deg, #00ff9d, #00cc7a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 30px rgba(0, 255, 157, 0.5);
-    margin-bottom: 0.4rem;
+    font-size: 3.4rem;
+    color: #ffb703;
+    text-shadow:
+        3px 3px 0 #a86d00,
+        0 0 22px rgba(255, 183, 3, 0.5);
+
+    margin-bottom: 0.6rem;
     letter-spacing: 3px;
 }
 
+/* Subtítulo */
 #menu-screen .subtitle {
-    font-size: 1.35rem;
-    color: #a0e6c8;
-    margin-bottom: 3rem;
-    letter-spacing: 6px;
+    font-size: 1.2rem;
+    color: #d9e6f2;
+
+    margin-bottom: 2.4rem;
+
     text-transform: uppercase;
-    opacity: 0.9;
+    letter-spacing: 5px;
 }
 
+/* Contenedor de botones */
 .menu-options {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-    margin-bottom: 2.5rem;
+    gap: 1.1rem;
+
+    margin-bottom: 2rem;
 }
 
+/* =========================================================
+   BOTONES DEL MENÚ
+========================================================= */
 .menu-btn {
-    padding: 1.1rem 3rem;
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: white;
-    background: linear-gradient(180deg, #0066ff, #0044cc);
-    border: 3px solid #66aaff;
-    border-radius: 12px;
+    padding: 1rem 2.6rem;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+
+    background: linear-gradient(180deg, #3a86ff 0%, #265dbe 100%);
+    border: 3px solid #6ea8ff;
+    border-radius: 10px;
+
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
+
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
+    letter-spacing: 1px;
+
+    box-shadow: 0 5px 18px rgba(58, 134, 255, 0.35);
 }
 
+/* Hover del botón */
 .menu-btn:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(0, 102, 255, 0.5);
-    background: linear-gradient(180deg, #3388ff, #0066ff);
+    transform: translateY(-4px);
+
+    background: linear-gradient(180deg, #6ea8ff 0%, #3a86ff 100%);
+
+    box-shadow: 0 7px 28px rgba(58, 134, 255, 0.55);
 }
 
+/* Click del botón */
+.menu-btn:active {
+    transform: translateY(0);
+}
+
+/* Botón especial */
 #btn-golden-goal {
-    background: linear-gradient(180deg, #ffd700, #ffaa00);
-    border-color: #ffe066;
-    color: #1a1a1a;
+    background: linear-gradient(180deg, #ffb703 0%, #c98b00 100%);
+    border-color: #ffd166;
+
+    box-shadow: 0 5px 18px rgba(255, 183, 3, 0.4);
 }
 
+/* Hover botón especial */
 #btn-golden-goal:hover {
-    background: linear-gradient(180deg, #ffe633, #ffcc00);
+    background: linear-gradient(180deg, #ffd166 0%, #ffb703 100%);
+
+    box-shadow: 0 7px 28px rgba(255, 183, 3, 0.6);
 }
 
-/* Instrucciones */
+/* =========================================================
+   SECCIÓN DE INSTRUCCIONES
+========================================================= */
 .instructions {
-    background: rgba(255,255,255,0.08);
-    padding: 1.4rem 2.2rem;
-    border-radius: 12px;
-    border: 2px solid rgba(0, 255, 157, 0.3);
-    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.08);
+
+    padding: 1.3rem 2.1rem;
+
+    border-radius: 10px;
+    border: 2px solid #4f6d8a;
 }
 
-/* ==================== PANTALLA DE JUEGO ==================== */
+/* Título instrucciones */
+.instructions h3 {
+    color: #ffb703;
+
+    margin-bottom: 0.6rem;
+
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Texto instrucciones */
+.instructions p {
+    color: #edf2f4;
+
+    font-size: 0.95rem;
+    margin: 0.35rem 0;
+}
+
+/* =========================================================
+   PANTALLA DE JUEGO
+========================================================= */
 #game-screen {
-    background: #0a1f14;
+    background: #102542;
     padding: 0;
 }
 
+/* =========================================================
+   MARCADOR SUPERIOR
+========================================================= */
 #scoreboard {
     position: absolute;
-    top: 15px;
+
+    top: 12px;
     left: 50%;
     transform: translateX(-50%);
+
     display: flex;
     align-items: center;
-    gap: 1.2rem;
-    background: rgba(0, 0, 0, 0.75);
-    padding: 0.6rem 2rem;
-    border-radius: 50px;
-    border: 3px solid #00ff9d;
+    gap: 1rem;
+
+    background: rgba(5, 10, 20, 0.75);
+
+    padding: 0.6rem 1.6rem;
+
+    border-radius: 10px;
+    border: 2px solid #ffb703;
+
     z-index: 10;
-    backdrop-filter: blur(10px);
 }
 
+/* Equipos */
+.team-score {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* Nombre del equipo */
+.team-name {
+    color: #d9e6f2;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+/* Puntuación */
 .score {
-    color: #00ff9d;
-    font-size: 2rem;
-    font-weight: 800;
+    color: #ffb703;
+
+    font-size: 1.9rem;
+    font-weight: bold;
+
+    min-width: 1.6rem;
+    text-align: center;
 }
 
+/* Separador */
+.score-separator {
+    color: #ffb703;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* =========================================================
+   MODO DE JUEGO
+========================================================= */
 #game-mode-display {
     position: absolute;
-    top: 75px;
+
+    top: 62px;
     left: 50%;
     transform: translateX(-50%);
+
     display: flex;
     align-items: center;
-    gap: 12px;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 8px 16px;
-    border-radius: 50px;
+    gap: 0.8rem;
+
+    background: rgba(10, 15, 25, 0.55);
+
+    padding: 0.5rem 1rem;
+
+    border-radius: 6px;
+
     z-index: 10;
 }
 
-.small-btn {
-    padding: 0.45rem 1rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
+/* Botón menú rápido */
 #btn-menu-live {
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255,255,255,0.3);
+    margin-left: 0.3rem;
+
+    background: linear-gradient(180deg, #5c677d 0%, #343a40 100%);
+    border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
+/* Hover botón menú rápido */
 #btn-menu-live:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: linear-gradient(180deg, #adb5bd 0%, #5c677d 100%);
+}
+
+/* Texto modo */
+#mode-text {
+    color: #d9e6f2;
+
+    font-size: 0.8rem;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================================================
+   BOTONES PEQUEÑOS
+========================================================= */
+.small-btn {
+    padding: 0.35rem 0.85rem;
+
+    font-size: 0.8rem;
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Hover botones pequeños */
+.small-btn:hover {
+    background: rgba(255, 255, 255, 0.22);
+
     transform: translateY(-2px);
 }
 
-/* Canvas */
+/* Canvas del juego */
 #game-canvas {
     width: 100%;
     height: 100%;
     display: block;
-    image-rendering: crisp-edges;
 }
 
-/* Overlays */
+/* =========================================================
+   OVERLAYS
+========================================================= */
 .overlay {
     position: absolute;
-    top: 0; left: 0;
+
+    top: 0;
+    left: 0;
+
     width: 100%;
     height: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 30;
+
+    z-index: 20;
+
     pointer-events: none;
 }
 
-.overlay.hidden { display: none; }
+/* Overlay oculto */
+.overlay.hidden {
+    display: none;
+}
 
+/* Mensaje de gol */
+#message-overlay {
+    background: rgba(0, 0, 0, 0.65);
+}
+
+/* Texto central */
 #message-text {
-    font-size: 4.2rem;
-    font-weight: 900;
-    color: #00ff9d;
-    text-shadow: 0 0 40px rgba(0, 255, 157, 0.9),
-                 3px 3px 0 #006633;
-    animation: goalPulse 0.6s ease-out;
+    font-size: 4rem;
+    font-weight: bold;
+
+    color: #ffb703;
+
+    text-shadow:
+        0 0 35px rgba(255, 183, 3, 0.8),
+        3px 3px 0 #a86d00;
+
+    animation: goalPulse 0.5s ease-out;
 }
 
-/* Final Screen */
-#final-screen {
-    background: linear-gradient(180deg, #0f2a1f 0%, #05140f 100%);
-    border: 5px solid #00cc7a;
-}
-
-#final-title {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    letter-spacing: 4px;
-}
-
-.final-buttons button {
-    padding: 1rem 2.5rem;
-    font-size: 1.2rem;
-}
-
-/* Animaciones */
+/* Animación gol */
 @keyframes goalPulse {
-    0% { transform: scale(0.6); opacity: 0; }
-    60% { transform: scale(1.15); }
-    100% { transform: scale(1); opacity: 1; }
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
-/* Responsive */
+/* Cuenta regresiva */
+#countdown {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+/* Número countdown */
+#countdown-number {
+    font-size: 8rem;
+    font-weight: bold;
+
+    color: #ffb703;
+
+    text-shadow: 0 0 45px rgba(255, 183, 3, 0.8);
+
+    animation: countdownPulse 1s ease-in-out infinite;
+}
+
+/* Animación countdown */
+@keyframes countdownPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+/* =========================================================
+   PANTALLA FINAL
+========================================================= */
+#final-screen {
+    background: linear-gradient(180deg, #1b2a41 0%, #101820 100%);
+
+    border: 4px solid #4f6d8a;
+
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.5);
+}
+
+/* Título final */
+#final-title {
+    font-size: 3rem;
+
+    margin-bottom: 1rem;
+
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Victoria */
+#final-title.victory {
+    color: #ffb703;
+
+    text-shadow: 0 0 22px rgba(255, 183, 3, 0.5);
+}
+
+/* Derrota */
+#final-title.defeat {
+    color: #ef476f;
+
+    text-shadow: 0 0 22px rgba(239, 71, 111, 0.5);
+}
+
+/* Resultado final */
+#final-result {
+    font-size: 1.3rem;
+
+    color: #edf2f4;
+
+    margin-bottom: 2rem;
+}
+
+/* Botones finales */
+.final-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Botón reiniciar */
+#btn-restart {
+    background: linear-gradient(180deg, #06d6a0 0%, #029c74 100%);
+    border-color: #52e0be;
+}
+
+/* Hover reiniciar */
+#btn-restart:hover {
+    background: linear-gradient(180deg, #52e0be 0%, #06d6a0 100%);
+}
+
+/* Botón menú */
+#btn-menu {
+    background: linear-gradient(180deg, #6c757d 0%, #495057 100%);
+    border-color: #ced4da;
+}
+
+/* Hover menú */
+#btn-menu:hover {
+    background: linear-gradient(180deg, #ced4da 0%, #6c757d 100%);
+}
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
 @media (max-width: 768px) {
-    #menu-screen h1 { font-size: 2.8rem; }
-    .menu-btn { padding: 0.9rem 2.2rem; font-size: 1.1rem; }
+
+    /* Título principal */
+    #menu-screen h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Botones menú */
+    .menu-btn {
+        padding: 0.85rem 2rem;
+        font-size: 1.05rem;
+    }
+
+    /* Marcador */
+    #scoreboard {
+        padding: 0.45rem 1rem;
+    }
+
+    /* Puntuación */
+    .score {
+        font-size: 1.5rem;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE MÓVIL
+========================================================= */
+@media (max-width: 480px) {
+
+    /* Título principal */
+    #menu-screen h1 {
+        font-size: 2rem;
+    }
+
+    /* Subtítulo */
+    #menu-screen .subtitle {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    /* Caja instrucciones */
+    .instructions {
+        padding: 1rem 1.4rem;
+    }
+
+    /* Texto instrucciones */
+    .instructions p {
+        font-size: 0.85rem;
+    }
 }
